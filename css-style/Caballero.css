@@ -1,0 +1,265 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía y fondo general */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000123;
+  color: #fff;
+}
+ 
+/* Navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000123;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff0f7b;
+}
+
+/* Hero */
+.hero {
+  height: 60vh;
+  background-image: url('https://cdn.pixabay.com/photo/2021/11/15/05/25/boutique-6796399_640.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Secciones de productos */
+.productos {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.productos h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Grid adaptable hasta 4 columnas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+/* Tarjeta de producto */
+.producto {
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  border: 1px solid #444;
+}
+
+.producto:hover {
+  transform: scale(1.03);
+}
+
+.producto img {
+  width: 80%;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.producto img:hover {
+  transform: scale(1.1);
+}
+
+.producto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.producto p {
+  font-size: 1rem;
+  color: #ff0f7b;
+  margin-bottom: 1rem;
+}
+
+/* Botón */
+.btn {
+  background-color: #ff0f7b;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #cc0c63;
+}
+
+/* Footer */
+footer {
+  background-image: url('https://img.freepik.com/foto-gratis/tienda-ropa-borrosa-centro-comercial_1258-5.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.footer-content p {
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+/*Menu select*/
+select {
+  background-color: #1a1a1a;
+  padding: 2px 15px;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* --- Condig menu --- */
+.hamburger {
+    visibility: hidden;
+}
+
+.side-menu h2{
+  display: none;
+}
+
+.side-menu li a img{
+  display: none;
+}
+
+.side-menu2{
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .hero h1 {font-size: 2rem;}
+  .producto img {width: 90%; }
+
+  .hamburger {
+    position: sticky;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: #fff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #000123;
+    cursor: pointer;
+    z-index: 1001;
+    transition: opacity 0.3s ease;
+    padding: 4px 8px;
+    visibility: visible;
+  }
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 0;
+    background-color:  rgba(255, 255, 255, 0.053);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: height 0.3s ease;
+    box-shadow: 2px 0 5px #111;
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .side-menu.open {
+    height: 100vh;
+    width: 100vw;
+  }
+  .side-menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(80px, 1fr));
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    align-content: center;
+    width: 100%;
+    gap: 24px;
+  }
+  .side-menu li {
+    text-align: center;
+  }
+  .side-menu li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #cc0c63;
+    border-radius: 12px;
+    margin: 5px;
+  }
+
+  .side-menu h2{
+    display: initial;
+    font-size: 45px;
+    margin-bottom: 55px;
+  }
+
+  .side-menu li a img{
+    width: 80px;
+    display: initial;
+  }
+}

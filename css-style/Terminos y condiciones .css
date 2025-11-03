@@ -1,0 +1,155 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía y fondo general */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000123;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000123;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+/* Hero/banner */
+.hero {
+  height: 40vh;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0jBcihI6ZHGs0KqkScnoGWEL-0_lnyXlNg&s');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 90%;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
+
+/* Contenido principal */
+.contenido {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.terminos h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ffcc00;
+}
+
+.terminos p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.terminos a {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+.terminos a:hover {
+  color: #e6b800;
+}
+
+/* Footer */
+footer {
+  background-color: #000123;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.footer-content p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contenido {
+    padding: 2rem 1rem;
+  }
+
+  .terminos h2 {
+    font-size: 1.3rem;
+  }
+
+  .terminos p {
+    font-size: 0.95rem;
+  }
+}
